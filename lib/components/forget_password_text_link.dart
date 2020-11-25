@@ -1,34 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/constants.dart';
 
-class AlreadyHaveAnAccountCheck extends StatelessWidget {
-  final bool login;
+class ForgetPasswordTextLink extends StatelessWidget {
+  final String text;
+  final String link;
   final Function press;
-  const AlreadyHaveAnAccountCheck({
+  const ForgetPasswordTextLink({
     Key key,
-    this.login = true,
+    this.text,
+    this.link,
     this.press,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.end,
       children: <Widget>[
         Text(
-          login ? "Don’t have an Account ? " : "Already have an Account ? ",
+          text,
           style: TextStyle(color: Colors.white),
         ),
         GestureDetector(
           onTap: press,
           child: Text(
-            login ? "REGISTER" : "SIGN IN",
+            link,
             style: TextStyle(
-              color: Colors.blueAccent,
+              color: Colors.white,
               fontWeight: FontWeight.bold,
             ),
           ),
-        )
+        ),
+        SizedBox(width: 40,)
       ],
     );
   }

@@ -11,27 +11,35 @@ class Background extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
+      decoration: BoxDecoration(
+        color: Color.fromRGBO(0, 0, 139, 0.7),
+
+        image:DecorationImage(
+            image: AssetImage('assets/images/background.png'),
+            fit: BoxFit.fill
+        ),
+      ),
       width: double.infinity,
       height: size.height,
       child: Stack(
         alignment: Alignment.center,
         children: <Widget>[
-          Positioned(
-            top: 0,
-            left: 0,
-            child: Image.asset(
-              "assets/images/main_top.png",
-              width: size.width * 0.35,
-            ),
-          ),
-          Positioned(
-            bottom: 0,
-            right: 0,
-            child: Image.asset(
-              "assets/images/login_bottom.png",
-              width: size.width * 0.4,
-            ),
-          ),
+          // Positioned(
+          //   top: 0,
+          //   left: 0,
+          //   child: Image.asset(
+          //     "assets/images/main_top.png",
+          //     width: size.width * 0.35,
+          //   ),
+          // ),
+          // Positioned(
+          //   bottom: 0,
+          //   right: 0,
+          //   child: Image.asset(
+          //     "assets/images/login_bottom.png",
+          //     width: size.width * 0.4,
+          //   ),
+          // ),
           child,
         ],
       ),

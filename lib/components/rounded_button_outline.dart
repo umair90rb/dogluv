@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/constants.dart';
 
-class RoundedButton extends StatelessWidget {
+class RoundedButtonOutline extends StatelessWidget {
   final String text;
   final Function press;
   final Color color, textColor;
   final bool border;
-  const RoundedButton({
+  const RoundedButtonOutline({
     Key key,
     this.text,
     this.press,
@@ -33,7 +33,7 @@ class RoundedButton extends StatelessWidget {
       child: ClipRRect(
 
         borderRadius: BorderRadius.circular(29),
-        child: FlatButton(
+        child: OutlineButton(
 
           padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
           color: color,

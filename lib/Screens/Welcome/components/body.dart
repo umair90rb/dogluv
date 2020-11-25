@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_auth/Screens/Login/login_screen.dart';
 import 'package:flutter_auth/Screens/Signup/signup_screen.dart';
 import 'package:flutter_auth/Screens/Welcome/components/background.dart';
+import 'package:flutter_auth/components/forget_password_text_link.dart';
 import 'package:flutter_auth/components/rounded_button.dart';
 import 'package:flutter_auth/constants.dart';
-import 'package:flutter_svg/svg.dart';
+// import 'package:flutter_svg/svg.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -16,18 +17,44 @@ class Body extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            SizedBox(height: size.height * 0.3),
             Text(
-              "WELCOME TO EDU",
-              style: TextStyle(fontWeight: FontWeight.bold),
+              "WELCOME TO",
+
+              style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 22
+              ),
             ),
-            SizedBox(height: size.height * 0.05),
-            SvgPicture.asset(
-              "assets/icons/chat.svg",
-              height: size.height * 0.45,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text(
+                  "Dog",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontFamily: 'Lobster',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 50
+                  ),
+                ),
+                Text(
+                  "Luv",
+                  style: TextStyle(
+                      fontFamily: 'Lobster',
+                      color: Colors.blueAccent,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 50
+                  ),
+                ),
+              ],
             ),
+
             SizedBox(height: size.height * 0.05),
             RoundedButton(
-              text: "LOGIN",
+              text: "SIGN IN",
+              color: Colors.lightBlue,
               press: () {
                 Navigator.push(
                   context,
@@ -40,9 +67,9 @@ class Body extends StatelessWidget {
               },
             ),
             RoundedButton(
-              text: "SIGN UP",
-              color: kPrimaryLightColor,
-              textColor: Colors.black,
+              text: "REGISTER",
+              color: Colors.white,
+              textColor: Colors.blue,
               press: () {
                 Navigator.push(
                   context,
@@ -54,6 +81,17 @@ class Body extends StatelessWidget {
                 );
               },
             ),
+            SizedBox(height: size.height*0.05,),
+            InkWell(
+              onTap: (){},
+              child: Text(
+                  'Terms of Services',
+                style: TextStyle(
+                  color: Colors.white,
+                  decoration: TextDecoration.underline,
+                ),
+              ),
+            )
           ],
         ),
       ),
